@@ -45,8 +45,8 @@ export class UrlsController {
     type: UrlDto,
   })
   @ApiResponse({ status: 404, description: 'Url not found.' })
-  @Get(':shortUrl')
-  findUrl(@Param('shortUrl') shortUrl: string): Promise<UrlDto> {
-    return this.urlsService.findUrl(shortUrl);
+  @Get(':base62')
+  findUrl(@Param('base62') base62: string): Promise<UrlDto> {
+    return this.urlsService.findUrl(base62);
   }
 }
