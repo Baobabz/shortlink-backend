@@ -34,7 +34,7 @@ export class UrlsController {
   })
   @ApiResponse({ status: 400, description: 'Bad request.' })
   @Post()
-  createShortUrl(@Body() createUrlDto: UrlDto): Promise<string> {
+  createShortUrl(@Body() createUrlDto: UrlDto): Promise<ShortUrlDto> {
     return this.urlsService.createShortUrl(createUrlDto);
   }
 
@@ -46,7 +46,7 @@ export class UrlsController {
   })
   @ApiResponse({ status: 404, description: 'Url not found.' })
   @Get(':shortUrl')
-  findUrl(@Param('shortUrl') shortUrl: string): Promise<string> {
+  findUrl(@Param('shortUrl') shortUrl: string): Promise<UrlDto> {
     return this.urlsService.findUrl(shortUrl);
   }
 }

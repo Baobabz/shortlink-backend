@@ -20,8 +20,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=shortlink
-    volumes:
-      - ./db:/var/lib/mysql
+    # volumes:
+    #   - ./db:/var/lib/mysql
     healthcheck:
       test:
         [
