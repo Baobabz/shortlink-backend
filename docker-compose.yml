@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '25000:3000'
+      - '25001:3000'
     depends_on:
       db:
         condition: service_healthy
@@ -34,5 +34,5 @@ services:
           'root',
           '-p$MYSQL_ROOT_PASSWORD',
         ]
-      timeout: 20s
+      timeout: 5s
       retries: 10
