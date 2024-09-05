@@ -29,7 +29,7 @@ export class UrlsService {
       return newShortUrlDto;
     }
 
-    const randomNum = Math.floor(Math.random() * 56800235584);
+    const randomNum = Math.floor(Math.random() * 14776336);
     const base62 = Base62.encode(randomNum);
 
     const base62Exists = await this.prisma.url.findUnique({

@@ -1,3 +1,5 @@
 #!/bin/sh
-yarn prisma db push
-yarn start:prod
+
+npx prisma migrate dev --name init
+npx prisma migrate deploy && \
+npm run start:prod
